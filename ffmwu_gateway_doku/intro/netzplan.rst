@@ -43,11 +43,12 @@ IPv6
 
 Wir nutzen das `IPv6 ULA Prefix`_ ``fdc4:d762:2143::1/48``
 
-Dieses ist bei SixXS_ an zentraler Stelle registriert, ...
+Dieses ist NOCH NICHT bei SixXS_ an zentraler Stelle registriert, ...
+jedoch hier: https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjEjdW9rvjLAhVF9w4KHU6BB88QFggfMAA&url=http%3A%2F%2Fwiki.freifunk.net%2FIP-Netze&usg=AFQjCNHN65ZwqCQpHpOdbZvquZpvh3zqOw&sig2=CKB1gKWt49IJGyi5lVMHBg&bvm=bv.118443451,d.ZWU zugewiesen
 
 IPv6 Subnetze haben immer eine Prefix-Länge von *64 Bit*. Durch das /48 Subnetz stehen uns also 2^16 = 65536 /64 IPv6 Subnetze zur Verfügung.
 
-Fürs erste wird allein dieses IPv6 Subnetz verwendet: ``fdXX:b4dc:4b1e:0000::/64`` (abgekürzt: ``fdXX:b4dc:4b1e::/64``, siehe `Address Notation`_).
+Fürs erste wird allein dieses IPv6 Subnetz verwendet: ``fdc4:d762:2143:0000:/64`` (abgekürzt: ``fdc4:d762:2143::/64``, siehe `Address Notation`_).
 
 .. _IPv6 ULA Prefix: http://de.wikipedia.org/wiki/IPv6#Unique_Local_Unicast
 .. _SixXS: https://www.sixxs.net/
