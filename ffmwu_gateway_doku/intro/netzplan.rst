@@ -28,9 +28,15 @@ Unser großes ``10.X.0.0/16`` (mit 65536 Adressen) teilen wir uns ein wenig ein:
 
 Wir nutzen von diesem Netz erstmal das untere Viertel: ``10.X.0.0/18``:
 
-================ =============== ================= =============== ===========
-Netz             (bis)           Verwendung        verteilt durch  status
-================ =============== ================= =============== ===========
+10.11.159.255
+==================  =================  ================= =============== ===========
+Netz                (bis)              Verwendung        verteilt durch  status
+==================  =================  ================= =============== ===========
+``10.11.144.0/24``  ``10.11.144.255``  Gateways          fix             in Betrieb
+``10.11.145.0/24``  ``10.11.145.255``  ¬                 ¬               frei
+``10.11.148.0/22``  ``10.11.151.255``  ¬                 ¬               frei
+``10.11.152.0/24``  ``10.11.155.255``  ¬                 ¬               frei
+``10.11.156.0/24``  ``10.11.159.254``  Client DHCP-Range GW02            in Betrieb
 ``10.X.0.0/24``  ``10.X.0.255``  Gateways          fix             in Betrieb
 ``10.X.1.0/24``  ``10.X.1.255``  ¬                 ¬               frei
 ``10.X.2.0/23``  ``10.X.3.255``  Backbone          fix             in Betrieb
@@ -53,9 +59,9 @@ Netz             (bis)           Verwendung        verteilt durch  status
 IPv6
 ----
 
-Wir nutzen das `IPv6 ULA Prefix`_ ``fdXX:b4dc:4b1e::/48``
+Wir nutzen das `IPv6 ULA Prefix`_ ``fdc4:d762:2143::1/48``
 
-Dieses ist bei SixXS_ an zentraler Stelle registriert, siehe `fd37:b4dc:4b1e\:\:/48`_ oder `fd56:b4dc:4b1e\:\:/48`_
+Dieses ist bei SixXS_ an zentraler Stelle registriert, ...
 
 IPv6 Subnetze haben immer eine Prefix-Länge von *64 Bit*. Durch das /48 Subnetz stehen uns also 2^16 = 65536 /64 IPv6 Subnetze zur Verfügung.
 
