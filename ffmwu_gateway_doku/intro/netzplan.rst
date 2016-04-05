@@ -37,24 +37,7 @@ Netz                (bis)              Verwendung        verteilt durch  status
 ``10.11.148.0/22``  ``10.11.151.255``  ¬                 ¬               frei
 ``10.11.152.0/24``  ``10.11.155.255``  ¬                 ¬               frei
 ``10.11.156.0/24``  ``10.11.159.254``  Client DHCP-Range GW02            in Betrieb
-``10.X.0.0/24``  ``10.X.0.255``  Gateways          fix             in Betrieb
-``10.X.1.0/24``  ``10.X.1.255``  ¬                 ¬               frei
-``10.X.2.0/23``  ``10.X.3.255``  Backbone          fix             in Betrieb
-``10.X.4.0/22``  ``10.X.7.255``  User Services     fix             in Betrieb
-``10.X.8.0/21``  ``10.X.15.255`` ¬                 ¬               frei
-``10.X.16.0/22`` ``10.X.19.255`` Client DHCP-Range Lotuswurzel     in Betrieb
-``10.X.20.0/22`` ``10.X.23.255`` Client DHCP-Range Spinat          in Betrieb
-``10.X.24.0/22`` ``10.X.27.255`` Client DHCP-Range Zitronengras    in Betrieb
-``10.X.28.0/22`` ``10.X.31.255`` Client DHCP-Range Parmesan        in Betrieb
-``10.X.32.0/22`` ``10.X.35.255`` Client DHCP-Range Kaschu          in Betrieb
-``10.X.36.0/22`` ``10.X.39.255`` Client DHCP-Range Wasserfloh      in Betrieb
-``10.X.40.0/22`` ``10.X.43.255`` Client DHCP-Range ¬               frei
-``10.X.44.0/22`` ``10.X.47.255`` Client DHCP-Range ¬               frei
-``10.X.48.0/22`` ``10.X.51.255`` Client DHCP-Range ¬               frei
-``10.X.52.0/22`` ``10.X.55.255`` Client DHCP-Range ¬               frei
-``10.X.56.0/22`` ``10.X.59.255`` Client DHCP-Range ¬               frei
-``10.X.60.0/22`` ``10.X.63.255`` Client DHCP-Range Mettigel        Testbetrieb
-================ =============== ================= =============== ===========
+==================  =================  ================= =============== ===========
 
 IPv6
 ----
