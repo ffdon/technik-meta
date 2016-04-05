@@ -28,7 +28,6 @@ Unser großes ``10.X.0.0/16`` (mit 65536 Adressen) teilen wir uns ein wenig ein:
 
 Wir nutzen von diesem Netz erstmal das untere Viertel: ``10.X.0.0/18``:
 
-10.11.159.255
 ==================  =================  ================= =============== ===========
 Netz                (bis)              Verwendung        verteilt durch  status
 ==================  =================  ================= =============== ===========
