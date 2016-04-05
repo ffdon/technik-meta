@@ -2,7 +2,7 @@ Beschreibung
 ------------
 
 In dieser Anleitung wird beschrieben, wie wir unsere Gateway-Server für Freifunk aufsetzen.
-*Freifunk Mainz, Wiesbaden & Umgebung* versorgt mit dieser Gateway Infrastruktur mehrere Communities, aktuell Freifunk-Mainz_ und Freifunk-Wiesbaden_.
+*Donau-Ries* versorgt mit dieser Gateway Infrastruktur eine Community, aktuell Donau-Ries_ im gesamten.
 
 Aus diesem Grund sind alle Konfigurationen darauf ausgelegt, sofern möglich und sinnvoll, die Communities logisch zu trennen. An dieser Stelle sei darauf hingewiesen, dass es sich also nicht um eine Gateway Anleitung für den Infrastrukturaufbau für eine einzige Community handelt. Es ist aber durchaus möglich die hier aufgezeigten Konfigurationen dahingehend zu adaptieren.
 
