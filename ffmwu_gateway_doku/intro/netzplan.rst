@@ -3,19 +3,20 @@
 Netzplan
 ========
 
-Freifunk Mainz & Freifunk Wiesbaden sind TCP/IP-basierte Netzwerke. Deshalb haben die beteiligten Computer (Clients, Gates und die Knoten) jeweils IP-Adressen, die eindeutig sein müssen.
+Freifunk Dona-Ries sind TCP/IP-basierte Netzwerke. Deshalb haben die beteiligten Computer (Clients, Gates und die Knoten) jeweils IP-Adressen, die eindeutig sein müssen.
 
 Wird (z. B. aus Versehen) eine Adresse mehrfach verwendet, so führt das zu Problemen im Betrieb.
 
-Andererseits müssen alle Adressen im *Freifunk Mainz* oder *Freifunk Wiesbaden* zum dem selben Adressbereich, sowie zum selben Netz gehören.
+Andererseits müssen alle Adressen im *Donau-Ries* zum dem selben Adressbereich, sowie zum selben Netz gehören.
 
 IPv4
 ----
 
 Wir haben für unserer Freifunk-Communities folgende Netze zugewiesen bekommen:
 
-* Mainz - ``10.37.0.0/16`` = **37**
-* Wiesbaden - ``10.56.0.0/16`` = **56**
+* Donau-Ries - ``10.86.0.0/16`` = **86**  --> 65534 Adressen
+* Donau-Ries - ``10.11.144.0/20``         -->  4094 Adressen, AS64874
+* Donau-Ries - ``fdc4:d762:2143::/48``    --> 65534 Netze,    AS64874
 
 Datenpakete aus diesen Adressbereichen werden innerhalb des Freifunks vermittelt, im großen weiten Internet aber nicht geroutet (Hintergrundinformationen dazu `gibt es hier`_).
 
