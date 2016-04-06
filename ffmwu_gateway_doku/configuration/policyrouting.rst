@@ -18,7 +18,7 @@ Unter Linux konfiguriert man Routing Policies über sogenannte **IP Rules**. Dam
     # IP rules
     #
 
-    # Priority 7 - lookup rt_table mwu for all incoming traffic of freifunk related interfaces
+    # Priority 7 - lookup rt_table ffdon for all incoming traffic of freifunk related interfaces
     ip -4 rule add from all iif donBR lookup ffdon priority 7
     ...
     <IPv4 rules für IC-VPN>
