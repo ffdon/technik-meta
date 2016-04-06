@@ -14,7 +14,7 @@ IPv4
 
 Wir haben für unserer Freifunk-Communities folgende Netze zugewiesen bekommen:
 
-* Donau-Ries - ``10.86.0.0/16`` = **86**  --> 65534 Adressen
+* Donau-Ries - ``10.86.0.0/16`` = **86**  --> 65534 Adressen, wird derzeit nicht genutzt, hat noch keinen AS-Eintrag
 * Donau-Ries - ``10.11.144.0/20``         -->  4094 Adressen, AS64874
 * Donau-Ries - ``fdc4:d762:2143::/48``    --> 65534 Netze,    AS64874
 
@@ -22,9 +22,10 @@ Datenpakete aus diesen Adressbereichen werden innerhalb des Freifunks vermittelt
 
 .. _gibt es hier: http://de.wikipedia.org/wiki/Private_IP-Adresse#Adressbereiche
 
-Unser großes ``10.X.0.0/16`` (mit 65536 Adressen) teilen wir uns ein wenig ein:
+Unser großes ``10.86.0.0/16`` (mit 65536 Adressen) wird nicht genutzt:
+Unser kleines ``10.11.144.0/20`` (mit 4094 Adressen) teilen wir uns ein wenig ein
 
-``10.X.0.0/16`` wird nicht komplett genutzt, um in Zukunft noch was auf Halde zu haben. Wachsen ist immer einfacher als schrumpfen.
+``10.11.144.0/20`` wird nicht komplett genutzt, um in Zukunft noch was auf Halde zu haben. Wachsen ist immer einfacher als schrumpfen.
 
 Wir nutzen von diesem Netz erstmal das untere Viertel: ``10.X.0.0/18``:
 
@@ -44,17 +45,18 @@ IPv6
 Wir nutzen das `IPv6 ULA Prefix`_ ``fdc4:d762:2143::1/48``
 
 Dieses ist NOCH NICHT bei SixXS_ an zentraler Stelle registriert, ...
-jedoch hier: https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjEjdW9rvjLAhVF9w4KHU6BB88QFggfMAA&url=http%3A%2F%2Fwiki.freifunk.net%2FIP-Netze&usg=AFQjCNHN65ZwqCQpHpOdbZvquZpvh3zqOw&sig2=CKB1gKWt49IJGyi5lVMHBg&bvm=bv.118443451,d.ZWU zugewiesen
+jedoch hier:
+https://www.google.de/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjEjdW9rvjLAhVF9w4KHU6BB88QFggfMAA&url=http%3A%2F%2Fwiki.freifunk.net%2FIP-Netze&usg=AFQjCNHN65ZwqCQpHpOdbZvquZpvh3zqOw&sig2=CKB1gKWt49IJGyi5lVMHBg&bvm=bv.118443451,d.ZWU zugewiesen
 
 IPv6 Subnetze haben immer eine Prefix-Länge von *64 Bit*. Durch das /48 Subnetz stehen uns also 2^16 = 65536 /64 IPv6 Subnetze zur Verfügung.
 
 Fürs erste wird allein dieses IPv6 Subnetz verwendet: ``fdc4:d762:2143:0000:/64`` (abgekürzt: ``fdc4:d762:2143::/64``, siehe `Address Notation`_).
 
-.. _IPv6 ULA Prefix: http://de.wikipedia.org/wiki/IPv6#Unique_Local_Unicast
-.. _SixXS: https://www.sixxs.net/
-.. _fd37:b4dc:4b1e\:\:/48:  https://www.sixxs.net/tools/whois/?fd37:b4dc:4b1e\:\:/48
-.. _fd56:b4dc:4b1e\:\:/48:  https://www.sixxs.net/tools/whois/?fd56:b4dc:4b1e\:\:/48
-.. _Address Notation: http://de.wikipedia.org/wiki/IPv6#Adressnotation
+REM .. _IPv6 ULA Prefix: http://de.wikipedia.org/wiki/IPv6#Unique_Local_Unicast
+REM .. _SixXS: https://www.sixxs.net/
+REM .. _fd37:b4dc:4b1e\:\:/48:  https://www.sixxs.net/tools/whois/?fd37:b4dc:4b1e\:\:/48
+REM .. _fd56:b4dc:4b1e\:\:/48:  https://www.sixxs.net/tools/whois/?fd56:b4dc:4b1e\:\:/48
+REM .. _Address Notation: http://de.wikipedia.org/wiki/IPv6#Adressnotation
 
 
 .. _interface_bezeichnung:
@@ -77,8 +79,8 @@ Dies erleichtert das Scripten und Debuggen.
 Namenskonvention
 ----------------
 
-Als *Hostname* der Gateways nehmen wir **"irgendwas mit Nahrung"**.
-
+REM Als *Hostname* der Gateways nehmen wir **"irgendwas mit Nahrung"**.
+Als *Hostname* der Gateways nehmen wir **GW02** oder ähnliche.
 
 .. _next_node:
 
@@ -118,15 +120,15 @@ Mit den uns zugewiesenen Netznummern sowie der Gateway-Nummer und dem Gateway-Na
         * 10.11.144.2 -> ``02:00:0a:0b:90:02`` -> GW02
         * 10.11.144.2 -> ``02:00:0a:0b:90:03`` -> GW03
         
-    * Beispiele (für Mainz):
-        * 10.37.0.1 -> ``02:00:0a:25:00:01``
-        * 10.37.23.42 -> ``02:00:0a:25:17:2a``
-        * 10.37.254.2 -> ``02:00:0a:25:fe:02``
+REM    * Beispiele (für Mainz):
+REM        * 10.37.0.1 -> ``02:00:0a:25:00:01``
+REM        * 10.37.23.42 -> ``02:00:0a:25:17:2a``
+REM        * 10.37.254.2 -> ``02:00:0a:25:fe:02``
 
-    * Beispiele (für Wiesbaden):
-        * 10.56.0.1 -> ``02:00:0a:38:00:01``
-        * 10.56.23.42 -> ``02:00:0a:38:17:2a``
-        * 10.56.254.2 -> ``02:00:0a:38:fe:02``
+REM    * Beispiele (für Wiesbaden):
+REM        * 10.56.0.1 -> ``02:00:0a:38:00:01``
+REM        * 10.56.23.42 -> ``02:00:0a:38:17:2a``
+REM        * 10.56.254.2 -> ``02:00:0a:38:fe:02``
 
     * Wer zu faul zum rechnen ist, darf auch gerne den IP2MAC-Konverter_ nutzen.
 
