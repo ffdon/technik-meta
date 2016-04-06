@@ -50,21 +50,21 @@ Dies gestaltet alles übersichtlicher.
 
 Scripte für :ref:`fastd`::
 
-    allow-hotplug wiVPN
-    iface wiVPN inet6 manual
-        hwaddress 02:00:0a:38:00:X
+    allow-hotplug donVPN
+    iface donVPN inet6 manual
+        hwaddress 02:00:0a:0b:90:02
         pre-up          /sbin/modprobe batman-adv
-        post-up         /usr/sbin/batctl -m wiBAT if add $IFACE
-        post-up         /sbin/ip link set dev wiBAT up
+        post-up         /usr/sbin/batctl -m donBAT if add $IFACE
+        post-up         /sbin/ip link set dev donBAT up
 
 Zum Schluss noch für das B.A.T.M.A.N. Interface::
 
-    allow-hotplug wiBAT
-    iface wiBAT inet6 manual
+    allow-hotplug donBAT
+    iface donBAT inet6 manual
         pre-up          /sbin/modprobe batman-adv
-        post-up         /sbin/brctl addif wiBR $IFACE
+        post-up         /sbin/brctl addif donBR $IFACE
         post-up         /usr/sbin/batctl -m $IFACE it 10000
         post-up         /usr/sbin/batctl -m $IFACE vm server
         post-up         /usr/sbin/batctl -m $IFACE gw server  96mbit/96mbit
-        pre-down        /sbin/brctl delif wiBR $IFACE || true
+        pre-down        /sbin/brctl delif donBR $IFACE || true
 
