@@ -52,7 +52,9 @@ Routing Tabellen
 Wichtige Kernel Parameter
 -------------------------
 
-/etc/sysctl.conf::
+/etc/sysctl.conf::  --> ACHTUNG: wir müssen die nf_contrack_tcp_... Geschichten
+                        http://ubuntuforums.org/showthread.php?t=2250233
+                        nach  my iptables rule set schieben!
 
     # Freifunk specific settings
     net.ipv4.ip_forward=1
