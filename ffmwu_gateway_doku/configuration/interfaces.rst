@@ -17,6 +17,17 @@ Das hoch/runterfahren der VPNs oder das (neu-)starten von Diensten kann dadurch 
     - :ref:`policyrouting`
     - :ref:`internetexit`
 
+Hier eine bridge mit IPv4 und IPv6 am Beispiel von Donau-Ries::
+
+    auto donBR
+    iface donBR inet static
+        hwaddress 02:00:0a:0b:90:02
+        address 10.11.144.2
+        netmask 255.255.240.0
+        pre-up          /sbin/brctl addbr $IFACE
+        up              /sbin/ip address add fdc4:d762:2143::0a0b:9002/64 dev $IFACE
+        post-down       /sbin/brctl delbr $IFACE
+
 Hier eine bridge mit IPv4 und IPv6 am Beispiel von Wiesbaden::
 
     auto wiBR
