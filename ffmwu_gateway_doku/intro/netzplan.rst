@@ -3,7 +3,7 @@
 Netzplan
 ========
 
-Freifunk Dona-Ries sind TCP/IP-basierte Netzwerke. Deshalb haben die beteiligten Computer (Clients, Gates und die Knoten) jeweils IP-Adressen, die eindeutig sein müssen.
+Freifunk Donau-Ries sind TCP/IP-basierte Netzwerke. Deshalb haben die beteiligten Computer (Clients, Gates und die Knoten) jeweils IP-Adressen, die eindeutig sein müssen.
 
 Wird (z. B. aus Versehen) eine Adresse mehrfach verwendet, so führt das zu Problemen im Betrieb.
 
@@ -34,7 +34,7 @@ Netz                (bis)              Verwendung        verteilt durch  status
 ``10.11.144.0/24``  ``10.11.144.255``  Gateways          fix             in Betrieb
 ``10.11.145.0/24``  ``10.11.145.255``  ¬                 ¬               frei
 ``10.11.148.0/22``  ``10.11.151.255``  ¬                 ¬               frei
-``10.11.152.0/24``  ``10.11.155.255``  Client DHCP-Range GW01            später
+``10.11.152.0/24``  ``10.11.155.255``  Client DHCP-Range GW03            später
 ``10.11.156.0/24``  ``10.11.159.254``  Client DHCP-Range GW02            in Betrieb
 ==================  =================  ================= =============== ===========
 
@@ -108,11 +108,16 @@ Bevor wir ein Gateway aufsetzen definieren wir einen Namen (leichter zu merken) 
 Mit den uns zugewiesenen Netznummern sowie der Gateway-Nummer und dem Gateway-Namen werden alle benötigten Informationen abgeleitet:
 
 * IPv4
-    * Das Netz von unten auffüllen (``10.x.0.0/24`` ist für Gateways)
+    * Das Netz von unten auffüllen (``10.11.144.0/24`` ist für Gateways)
 
 * MAC-Adresse
     * Privates Prefix (``02:00``) + IPv4-Adresse in hexadezimal
 
+    * Beispiele (für DON):
+        * 10.11.144.1 -> ``02:00:0a:0b:90:01`` -> Nextnode
+        * 10.11.144.2 -> ``02:00:0a:0b:90:02`` -> GW02
+        * 10.11.144.2 -> ``02:00:0a:0b:90:03`` -> GW03
+        
     * Beispiele (für Mainz):
         * 10.37.0.1 -> ``02:00:0a:25:00:01``
         * 10.37.23.42 -> ``02:00:0a:25:17:2a``
@@ -127,7 +132,7 @@ Mit den uns zugewiesenen Netznummern sowie der Gateway-Nummer und dem Gateway-Na
 
 .. _IP2MAC-Konverter: http://www.freifunk-mainz.de/mac.html
 
-* IPv6
+* IPv6     HIER GEHTS WEITER
     * Range-Prefix (``fd37:b4dc:4b1e`` bzw. ``fd56:b4dc:4b1e``) + IPv4 Adresse in hexadezimal, Doppelpunkte anpassen, führende Nullen streichen
 
     * Beispiele (für Mainz):
