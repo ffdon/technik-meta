@@ -34,7 +34,7 @@ Netz                (bis)              Verwendung        verteilt durch  status
 ``10.11.144.0/24``  ``10.11.144.255``  Gateways          fix             in Betrieb
 ``10.11.145.0/24``  ``10.11.145.255``  ¬                 ¬               frei
 ``10.11.148.0/22``  ``10.11.151.255``  ¬                 ¬               frei
-``10.11.152.0/24``  ``10.11.155.255``  ¬                 ¬               frei
+``10.11.152.0/24``  ``10.11.155.255``  Client DHCP-Range GW01            später
 ``10.11.156.0/24``  ``10.11.159.254``  Client DHCP-Range GW02            in Betrieb
 ==================  =================  ================= =============== ===========
 
@@ -67,9 +67,9 @@ Wir vergeben unsere Interface-Bezeichnungen einheitlich!
 +-----------+------+--------------+-------------+--------+---------------+----------+
 |           | eth0 | Mesh (Nodes) | B.A.T.M.A.N | Bridge | Intercity-VPN | Exit VPN |
 +-----------+------+--------------+-------------+--------+---------------+----------+
-| Mainz     |      | mzVPN        | mzBAT       | mzBR   |               |          |
+| DON       |      | donVPN       | donBAT      | donBR  |               |          |
 +-----------+ eth0 +--------------+-------------+--------+ icVPN         + exitVPN  +
-| Wiesbaden |      | wiVPN        | wiBAT       | wiBR   |               |          |
+| xx        |      | xxVPN        | xxBAT       | xxBR   |               |          |
 +-----------+------+--------------+-------------+--------+---------------+----------+
 
 Dies erleichtert das Scripten und Debuggen.
@@ -92,12 +92,9 @@ Diese Adressen sind auf jedem Knoten gleich. Der Freifunker muss sich nur diese 
 Wir nutzen dazu die jeweils niedrigsten Adressen
 
 * Mainz:
-    * IPv4: ``10.37.0.1``
-    * IPv6: ``fd37:b4dc:4b1e::1``
+    * IPv4: ``10.11.144.1``
+    * IPv6: ``fdc4:d762:2143::1``      BSPalt ``fd37:b4dc:4b1e::1``
 
-* Wiesbaden:
-    * IPv4: ``10.56.0.1``
-    * IPv6: ``fd56:b4dc:4b1e::1``
 
     ..
 
