@@ -93,10 +93,9 @@ Diese Adressen sind auf jedem Knoten gleich. Der Freifunker muss sich nur diese 
 
 Wir nutzen dazu die jeweils niedrigsten Adressen
 
-* Mainz:
+* DON:
     * IPv4: ``10.11.144.1``
     * IPv6: ``fdc4:d762:2143::1``      BSPalt ``fd37:b4dc:4b1e::1``
-
 
     ..
 
@@ -125,35 +124,28 @@ REM        * 10.37.0.1 -> ``02:00:0a:25:00:01``
 REM        * 10.37.23.42 -> ``02:00:0a:25:17:2a``
 REM        * 10.37.254.2 -> ``02:00:0a:25:fe:02``
 
-REM    * Beispiele (für Wiesbaden):
-REM        * 10.56.0.1 -> ``02:00:0a:38:00:01``
-REM        * 10.56.23.42 -> ``02:00:0a:38:17:2a``
-REM        * 10.56.254.2 -> ``02:00:0a:38:fe:02``
-
     * Wer zu faul zum rechnen ist, darf auch gerne den IP2MAC-Konverter_ nutzen.
 
 .. _IP2MAC-Konverter: http://www.freifunk-mainz.de/mac.html
 
 * IPv6     HIER GEHTS WEITER
-    * Range-Prefix (``fd37:b4dc:4b1e`` bzw. ``fd56:b4dc:4b1e``) + IPv4 Adresse in hexadezimal, Doppelpunkte anpassen, führende Nullen streichen
+    * Range-Prefix (``fdc4:d762:2143::/64``) + IPv4 Adresse in hexadezimal, Doppelpunkte anpassen, führende Nullen streichen
 
-    * Beispiele (für Mainz):
-        * gate02 -> ``fd37:b4dc:4b1e::0a25:0002/64``
-        * gate05 -> ``fd37:b4dc:4b1e::0a25:0005/64``
+    * Beispiele (für DON):
+        * gate02 -> ``fdc4:d762:2143::0a0b:9001/64`` -> Nextnote
+        * gate05 -> ``fdc4:d762:2143::0a0b:9002/64`` -> GW02
+        * gate05 -> ``fdc4:d762:2143::0a0b:9003/64`` -> GW03
 
-    * Beispiele (für Wiesbaden, abgekürzt):
-        * gate02 -> ``fd56:b4dc:4b1e::a38:2/64``
-        * gate23 -> ``fd56:b4dc:4b1e::a38:17/64``
 
 * DNS
     * ``xxxx.freifunk-mwu.de`` -> A- + AAAA-Record
     * ``gateXX.freifunk-mwu.de`` -> CNAME auf s.o.
     * Reverse DNS Eintrag korrekt setzen für Haupt DNS Namen: ``xxxx.freifunk-mwu.de``
 
-* IC-VPN
+* IC-VPN  --> das machen wir später fertig -> https://github.com/freifunk/icvpn-meta
     * Soll ein gate am IC-VPN teilnehmen benötigt es dafür noch weitere Einträge. Hier kann ein gate immer nur im Namen **einer** der Communities auftreten, auch wenn es technisch trotzdem für alle Communities agiert. (s. a. :ref:`icvpn`)
-    * Kurzname: ``[Stadt][Nr]``, z. B. ``mainz2``
-    * DNS-Eintrag zum Aufbau des Transfernetzes -> CNAME nach dem Muster ``ic-[stadt][Nr].freifunk-[stadt].de``
+    * Kurzname: ``[DON][02]``, z. B. ``GW02``
+    * DNS-Eintrag zum Aufbau des Transfernetzes -> CNAME nach dem Muster ``ic-[DON][02].freifunk-[donau-ries].de``
     * IP-Adressen (v4 und v6) im IC-VPN-Transfernetz, z. B. ``10.207.1.37``, ``fec0: :a:cf:1:25``
 
 Beispiel
