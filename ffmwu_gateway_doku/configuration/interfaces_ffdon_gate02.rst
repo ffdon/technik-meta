@@ -28,7 +28,13 @@ Nochmal langsam zum gegenprüfen::
       gateway fe80::1
     
     # bridge: donBR - hierübver läuft der gesamte Freifunk-Datenverkehr der community ffdon
-    # deshalb werden hier auch die IPs des AS64874 aus http://wiki.freifunk.net/IP-Netze konfiguriert
+    # deshalb werden hier auch die IPs des AS64874 aus http://wiki.freifunk.net/IP-Netze
+    # bzw. unserem Netzplan
+    # https://github.com/ffdon/technik-meta/blob/master/ffmwu_gateway_doku/intro/netzplan.rst
+    # konfiguriert
+    # ach ja die Hardware-Adresse wird errechnet:
+    # https://github.com/freifunk-mwu/technik-meta/blob/master/ffmwu_gateway_doku/intro/netzplan.rst
+    # https://github.com/ffdon/technik-meta/blob/master/ffmwu_gateway_doku/intro/netzplan.rst
     auto donBR
     iface donBR inet static
         hwaddress 02:00:0a:0b:90:02
@@ -37,7 +43,8 @@ Nochmal langsam zum gegenprüfen::
         pre-up          /sbin/brctl addbr $IFACE
         up              /sbin/ip address add fdc4:d762:2143::0a0b:9002/64 dev $IFACE
         post-down       /sbin/brctl delbr $IFACE
-
+        
+    # FASTd: donVPN für unsere Nodes mit mesh-over-VPN
     allow-hotplug donVPN
     iface donVPN inet6 manual
         hwaddress 02:00:0a:0b:90:02
@@ -45,6 +52,7 @@ Nochmal langsam zum gegenprüfen::
         post-up         /usr/sbin/batctl -m donBAT if add $IFACE
         post-up         /sbin/ip link set dev donBAT up
 
+    # B.A.T.M.A.N. unser Routing-Daemon 
     allow-hotplug donBAT
     iface donBAT inet6 manual
         pre-up          /sbin/modprobe batman-adv
@@ -54,7 +62,7 @@ Nochmal langsam zum gegenprüfen::
         post-up         /usr/sbin/batctl -m $IFACE gw server  96mbit/96mbit
         pre-down        /sbin/brctl delif donBR $IFACE || true
 
-    # GRE-Tunnel zu bb-a.ak.ber
+    # GRE-Tunnel zu bb-a.ak.ber - einer der redundanten Tunnel zur Ableitung des Freifunk-Verkehrs zu Freifunk Rheinland
     auto ffrl-a-ak-ber
     iface ffrl-a-ak-ber inet static
         address 100.64.1.197
@@ -67,7 +75,7 @@ Nochmal langsam zum gegenprüfen::
         address 2a03:2260:0:a1::2
         netmask 64
 
-    # GRE-Tunnel zu bb-b.ak.ber
+    # GRE-Tunnel zu bb-b.ak.ber - einer der redundanten Tunnel zur Ableitung des Freifunk-Verkehrs zu Freifunk Rheinland
     auto ffrl-b-ak-ber
     iface ffrl-b-ak-ber inet static
         address 100.64.4.201
@@ -80,7 +88,7 @@ Nochmal langsam zum gegenprüfen::
         address 2a03:2260:0:a3::2
         netmask 64
 
-    # GRE-Tunnel zu bb-a.ix.dus
+    # GRE-Tunnel zu bb-a.ix.dus - einer der redundanten Tunnel zur Ableitung des Freifunk-Verkehrs zu Freifunk Rheinland
     auto ffrl-a-ix-dus
     iface ffrl-a-ix-dus inet static
         address 100.64.4.199
@@ -93,7 +101,7 @@ Nochmal langsam zum gegenprüfen::
         address 2a03:2260:0:a2::2
         netmask 64
 
-    # GRE-Tunnel zu bb-b.ix.dus
+    # GRE-Tunnel zu bb-b.ix.dus - einer der redundanten Tunnel zur Ableitung des Freifunk-Verkehrs zu Freifunk Rheinland
     auto ffrl-b-ix-dus
     iface ffrl-b-ix-dus inet static
         address 100.64.4.202
