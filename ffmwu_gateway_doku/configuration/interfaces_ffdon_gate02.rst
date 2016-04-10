@@ -7,19 +7,25 @@ Netzwerk Interfaces
 
 Nochmal langsam zum gegenprüfen.
 
-### Hetzner Online GmbH - installimage
-# Loopback device:
-auto lo
-iface lo inet loopback
-iface lo inet6 loopback
+    ### gate02.freifunk-donau-ries.de /etc/network/interfaces
+    
+    # Loopback device:
+    auto lo
+    iface lo inet loopback
+    iface lo inet6 loopback
 
-# device: eth0
-auto  eth0
-iface eth0 inet dhcp
-iface eth0 inet6 static
-  address 2a01:4f8:c17:393b::2
-  netmask 64
-  gateway fe80::1
+    # device: eth0
+    # hier verbleiben weiter die von Hetzner vergebenen IPs
+    # Die Adressen dienen nur der Wartung
+    # über diese Adressen läuft kein Freifunk-Datenverkehr
+    # und vor allem keine DNS-Anfragen aus dem Freifunk-Netz
+    # auch nicht über einen Cache!
+    auto  eth0
+    iface eth0 inet dhcp
+    iface eth0 inet6 static
+      address 2a01:4f8:c17:393b::2
+      netmask 64
+      gateway fe80::1
 
 auto donBR
 iface donBR inet static
