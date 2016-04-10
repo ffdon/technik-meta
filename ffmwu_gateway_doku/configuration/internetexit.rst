@@ -158,13 +158,23 @@ Wir haben vom Freifunk Rheinland folgende IP-Netze erhalten:
 
  - Mainz
 
+   - `2a03:2260:3005::/48`_
+   - `185.66.193.90/31`_
+      --> das sind zwei IPv4-Adressen 185.66.193.90 .91
+
+Die MWU hat vom Freifunk Rheinland folgende IP-Netze erhalten:
+
+ - Mainz
+
    - `2a03:2260:11a::/48`_
    - `185.66.195.32/30`_
+     --> das sind vier IPv4Adressen 185.66.195.32 — .35
 
  - Wiesbaden
 
    - `2a03:2260:11b::/48`_
    - `185.66.195.36/30`_
+     --> das sind vier IPv4Adressen 185.66.195.36 — .39
 
 Technischer Aufbau
 ^^^^^^^^^^^^^^^^^^
@@ -185,6 +195,14 @@ Technischer Aufbau
 
    - bb-a.fra3.fra / 185.66.194.0
    - bb-b.fra3.fra / 185.66.194.1
+   
+   
+   Die zugeweisenen Endpunkte für Donau-Ries:
+bb-a.ak.ber 185.66.195.0
+bb-b.ak.ber 185.66.195.1
+bb-a.ix.dus 185.66.193.0
+bb-b.ix.dus 185.66.193.1
+keine Ahnung warum uns Frankfurt nicht angezeigt wurde.
 
 Prinzipiell wird von jedem Freifunk-Gateway zu jedem dieser Endpunkte ein GRE-Tunnel über IPv4 aufgebaut. Die oben aufgelisteten Endpunkte sowie die öffentliche IPv4-Adresse des Freifunk-Gateways stellen die äußeren Tunnel-IPs dar. Jeder GRE-Tunnel hat je ein Transfernetz für IPv4 und IPv6 für die innere Kommunikation:
 
