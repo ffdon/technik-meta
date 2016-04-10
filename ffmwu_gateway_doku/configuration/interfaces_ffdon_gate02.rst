@@ -26,7 +26,9 @@ Nochmal langsam zum gegenprüfen::
       address 2a01:4f8:c17:393b::2
       netmask 64
       gateway fe80::1
-
+    
+    # bridge: donBR - hierübver läuft der gesamte Freifunk-Datenverkehr der community ffdon
+    # deshalb werden hier auch die IPs des AS64874 aus http://wiki.freifunk.net/IP-Netze konfiguriert
     auto donBR
     iface donBR inet static
         hwaddress 02:00:0a:0b:90:02
