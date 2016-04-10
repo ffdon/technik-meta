@@ -61,7 +61,6 @@ Nochmal langsam zum gegenprüfen::
         post-up         /sbin/ip link set $IFACE mtu 1400
         post-up         /sbin/ip addr add 185.66.193.91/32 dev $IFACE
         post-down       /sbin/ip tunnel del $IFACE
-
     iface ffrl-a-ak-ber inet6 static
         address 2a03:2260:0:a1::2
         netmask 64
@@ -75,7 +74,6 @@ Nochmal langsam zum gegenprüfen::
         post-up         /sbin/ip link set $IFACE mtu 1400
         post-up         /sbin/ip addr add 185.66.193.91/32 dev $IFACE
         post-down       /sbin/ip tunnel del $IFACE
-
     iface ffrl-b-ak-ber inet6 static
         address 2a03:2260:0:a3::2
         netmask 64
@@ -89,7 +87,6 @@ Nochmal langsam zum gegenprüfen::
         post-up         /sbin/ip link set $IFACE mtu 1400
         post-up         /sbin/ip addr add 185.66.193.91/32 dev $IFACE
         post-down       /sbin/ip tunnel del $IFACE
-
     iface ffrl-a-ix-dus inet6 static
         address 2a03:2260:0:a2::2
         netmask 64
@@ -103,7 +100,6 @@ Nochmal langsam zum gegenprüfen::
         post-up         /sbin/ip link set $IFACE mtu 1400
         post-up         /sbin/ip addr add 185.66.193.91/32 dev $IFACE
         post-down       /sbin/ip tunnel del $IFACE
-
     iface ffrl-b-ix-dus inet6 static
         address 2a03:2260:0:a4::2
         netmask 64
