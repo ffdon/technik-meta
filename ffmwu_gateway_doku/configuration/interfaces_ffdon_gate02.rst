@@ -67,13 +67,17 @@ Nochmal langsam zum gegenprüfen::
     iface ffrl-a-ak-ber inet static
         address 100.64.1.197
         netmask 255.255.255.254
+    # das ist das Tunnel-Netz, vergeben von FFRL
         pre-up          /sbin/ip tunnel add $IFACE mode gre local 10.11.144.2 remote 185.66.195.0 ttl 255
+    # das ist unsere Bridge-IP (local) gefolgt von der FFRL-Backbone-IP (remote)
         post-up         /sbin/ip link set $IFACE mtu 1400
         post-up         /sbin/ip addr add 185.66.193.91/32 dev $IFACE
+    # das ist unsere von FFRL zugewiesene öffentliche IPv4 des Gate02.freifunk-donau-ries.de
         post-down       /sbin/ip tunnel del $IFACE
     iface ffrl-a-ak-ber inet6 static
         address 2a03:2260:0:a1::2
         netmask 64
+    # das ist unsere von FFRL zugewiesene öffentliche IPv6 des Gate02.freifunk-donau-ries.de
 
     # GRE-Tunnel zu bb-b.ak.ber - einer der redundanten Tunnel zur Ableitung des Freifunk-Verkehrs zu Freifunk Rheinland
     auto ffrl-b-ak-ber
