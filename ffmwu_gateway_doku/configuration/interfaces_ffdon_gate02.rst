@@ -65,7 +65,7 @@ Nochmal langsam zum gegenprüfen::
     # GRE-Tunnel zu bb-a.ak.ber - einer der redundanten Tunnel zur Ableitung des Freifunk-Verkehrs zu Freifunk Rheinland
     auto ffrl-a-ak-ber
     iface ffrl-a-ak-ber inet static
-        address 100.64.1.197
+        address 100.64.4.197
         netmask 255.255.255.254
     # das ist das Tunnel-Netz, vergeben von FFRL
         pre-up          /sbin/ip tunnel add $IFACE mode gre local 10.11.144.2 remote 185.66.195.0 ttl 255
@@ -108,7 +108,7 @@ Nochmal langsam zum gegenprüfen::
     # GRE-Tunnel zu bb-b.ix.dus - einer der redundanten Tunnel zur Ableitung des Freifunk-Verkehrs zu Freifunk Rheinland
     auto ffrl-b-ix-dus
     iface ffrl-b-ix-dus inet static
-        address 100.64.4.202
+        address 100.64.4.203
         netmask 255.255.255.254
         pre-up          /sbin/ip tunnel add $IFACE mode gre local 10.11.144.2 remote 185.66.193.1 ttl 255
         post-up         /sbin/ip link set $IFACE mtu 1400
