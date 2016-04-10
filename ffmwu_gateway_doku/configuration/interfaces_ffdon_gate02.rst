@@ -5,10 +5,22 @@ Netzwerk Interfaces
 
 /etc/network/interfaces
 
-Nochmal langsam zum gegenprüfen.
+Nochmal langsam zum gegenprüfen::
 
-    ### gate02.freifunk-donau-ries.de /etc/network/interfaces
+Hier eine bridge mit IPv4 und IPv6 am Beispiel von Donau-Ries::
+
+    auto donBR
+    iface donBR inet static
+        hwaddress 02:00:0a:0b:90:02
+        address 10.11.144.2
+        netmask 255.255.240.0
+        pre-up          /sbin/brctl addbr $IFACE
+        up              /sbin/ip address add fdc4:d762:2143::0a0b:9002/64 dev $IFACE
+        post-down       /sbin/brctl delbr $IFACE
+
     
+    ### gate02.freifunk-donau-ries.de /etc/network/interfaces
+            
     # Loopback device:
     auto lo
     iface lo inet loopback
